@@ -6,14 +6,14 @@ Simple todo list built with [Appcelerator®](http://www.appcelerator.com) [Titan
 
 # Features
 - Session _Oct 11, 2015 5pm GMT_
-  1. Data model (id, text, lastModifiedDate, status[completed|pending], image)
-  2. List todos sorted by lastModifiedDate
-  3. Mark completed
-  4. Add new todo
+  1. ~~Data model (id, text, lastModifiedDate, status[completed|pending], image)~~
+  2. ~~List todos sorted by lastModifiedDate descending~~
+  3. ~~Mark completed~~
+  4. ~~Add new todo~~
   5. Edit task
   6. Add/Edit can attach image from camera and gallery
-  7. Filter Pending or Completed descending
-  8. Search in tasks
+  7. ~~Filter Pending or Completed~~
+  8. ~~Search in tasks~~
   9. Share it (Why you need to share task on social media)
   10. I'll start with iOS, so if we have time let's test it on Android
 
