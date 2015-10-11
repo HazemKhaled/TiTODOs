@@ -1,4 +1,5 @@
 <Alloy>
+  <Collection src="tasks"/>
   <Window>
     <ListView defaultItemTemplate="template" id="list" onItemclick="productListClicked">
       <Templates>
@@ -13,8 +14,8 @@
           </View>
         </ItemTemplate>
       </Templates>
-      <ListSection>
-        <ListItem image:image="/images/test.png" lastModifiedDate:text="Last day" myDataId:text="#23" text:text="Hey ya man"/>
+      <ListSection dataCollection="tasks">
+        <ListItem image:image="{image}" lastModifiedDate:text="{lastModifiedDate}" myDataId:text="{id}" text:text="{text}"/>
       </ListSection>
     </ListView>
   </Window>
