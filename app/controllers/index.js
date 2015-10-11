@@ -25,12 +25,13 @@ function todoListClicked(e) {
   options.show();
 }
 
-function loadtasks() {
-  // Load the data into the collection, collection will bind the data into the ListView automaticly
+function loadtasks(_status) {
+  status = _status || 'completed';
   Alloy.Collections.tasks.fetch({
-    query: "SELECT * FROM tasks ORDER BY lastModifiedDate DESC"
+    query: "SELECT * FROM tasks WHERE status='" + status + "' ORDER BY lastModifiedDate DESC"
   });
 }
+// Load the data into the collection, collection will bind the data into the ListView automaticly
 loadtasks();
 
 function transfomer(model) {
@@ -39,5 +40,9 @@ function transfomer(model) {
   transform.prettyTime = Alloy.Globals.moment(transform.lastModifiedDate).fromNow();
   return transform;
 }
+
+$.segmentBar.addEventListener('click', function(e) {
+  loadtasks(e.index === 0 ? 'completed' : 'pending');
+});
 
 Alloy.Globals.pageStack.open($.index);

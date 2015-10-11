@@ -1,7 +1,9 @@
 'Window': {
   title: 'TiTODO List'
 }
-'ListView': {}
+'ListView': {
+  top: 25
+}
 'ListItem': {
   height: 100
 }
