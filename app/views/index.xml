@@ -14,8 +14,8 @@
           </View>
         </ItemTemplate>
       </Templates>
-      <ListSection dataCollection="tasks">
-        <ListItem image:image="{image}" lastModifiedDate:text="{lastModifiedDate}" myDataId:text="{id}" text:text="{text}"/>
+      <ListSection dataCollection="tasks" dataTransform="transfomer">
+        <ListItem image:image="{image}" lastModifiedDate:text="{prettyTime}" myDataId:text="{id}" text:text="{text}"/>
       </ListSection>
     </ListView>
   </Window>

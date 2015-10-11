@@ -10,7 +10,8 @@
 }
 '.lineView': {
   layout: 'vertical',
-  left: 5
+  left: 5,
+  width: 200
 }
 '.imageViw': {
   width: 50,
