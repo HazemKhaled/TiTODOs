@@ -1,7 +1,7 @@
 <Alloy>
   <Collection src="tasks"/>
   <Window>
-    <ListView defaultItemTemplate="template" id="list" onItemclick="productListClicked">
+    <ListView defaultItemTemplate="template" id="list" onItemclick="todoListClicked">
       <Templates>
         <ItemTemplate name="template">
           <View class="container">
@@ -10,12 +10,13 @@
               <Label bindId="myDataId" class="myDataIdLbl"/>
               <Label bindId="text" class="textLbl"/>
               <Label bindId="lastModifiedDate" class="lastModifiedDateLbl"/>
+              <Label bindId="status" class="statusLbl"/>
             </View>
           </View>
         </ItemTemplate>
       </Templates>
       <ListSection dataCollection="tasks" dataTransform="transfomer">
-        <ListItem image:image="{image}" lastModifiedDate:text="{prettyTime}" myDataId:text="{id}" text:text="{text}"/>
+        <ListItem image:image="{image}" lastModifiedDate:text="{prettyTime}" myDataId:text="{id}" text:text="{text}" status:text="{status}"/>
       </ListSection>
     </ListView>
   </Window>
