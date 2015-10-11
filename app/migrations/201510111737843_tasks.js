@@ -1,16 +1,16 @@
 var preload_data = [{
   "text": "My Task man",
-  "lastModifiedDate": Alloy.Globals.moment().toISOString(),
-  "status": "completed",
+  "lastModifiedDate": Alloy.Globals.moment().subtract(1, 'Q').toISOString(),
+  "status": "pending",
   "image": "/images/1.png"
 }, {
   "text": "Build the app",
-  "lastModifiedDate": Alloy.Globals.moment().toISOString(),
-  "status": "completed",
+  "lastModifiedDate": Alloy.Globals.moment().subtract(1, 'M').toISOString(),
+  "status": "pending",
   "image": "/images/1.png"
 }, {
   "text": "Say thanks for all of you",
-  "lastModifiedDate": Alloy.Globals.moment().toISOString(),
+  "lastModifiedDate": Alloy.Globals.moment().subtract(33, 'm').toISOString(),
   "status": "completed",
   "image": "/images/1.png"
 }];
