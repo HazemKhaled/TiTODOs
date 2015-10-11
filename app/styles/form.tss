@@ -1,0 +1,12 @@
+'ScrollView': {
+  layout: 'vertical'
+}
+'TextField': {
+  borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+  width: '90%',
+  height: 40,
+  top: 5
+}
+'TextField[platform=android]': {
+  color: '#000000'
+}

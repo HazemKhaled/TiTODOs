@@ -1,6 +1,9 @@
 <Alloy>
   <Collection src="tasks"/>
   <Window>
+    <RightNavButton platform="ios">
+      <Button onClick="addBtnClicked">Add</Button>
+    </RightNavButton>
     <TabbedBar backgroundColor="#369" height="25" id="segmentBar" index="0" platform="ios" top="0" width="200">
       <Labels>
         <Label>Completed</Label>

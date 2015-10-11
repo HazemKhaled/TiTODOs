@@ -1,0 +1,11 @@
+<Alloy>
+  <Window onOpen="windowOpened" title="Add Task">
+    <RightNavButton platform="ios">
+      <Button onClick="saveBtnClicked">Save</Button>
+    </RightNavButton>
+    <ScrollView>
+      <TextField hintText="Text" id="text"/>
+      <TextField hintText="Image ... sooon" id="image"/>
+    </ScrollView>
+  </Window>
+</Alloy>

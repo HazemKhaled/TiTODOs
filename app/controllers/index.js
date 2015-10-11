@@ -41,8 +41,14 @@ function transfomer(model) {
   return transform;
 }
 
+// Reload the data after clicked on tabbed bar button
 $.segmentBar.addEventListener('click', function(e) {
   loadtasks(e.index === 0 ? 'completed' : 'pending');
 });
+
+// Open add new screen
+function addBtnClicked() {
+  Alloy.Globals.pageStack.open(Alloy.createController('form').getView());
+}
 
 Alloy.Globals.pageStack.open($.index);
