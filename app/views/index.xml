@@ -2,6 +2,8 @@
   <Collection src="tasks"/>
   <Window>
     <ListView defaultItemTemplate="template" id="list" onItemclick="todoListClicked">
+      <SearchBar />
+      <SearchView platform="android" />
       <Templates>
         <ItemTemplate name="template">
           <View class="container">
@@ -16,7 +18,7 @@
         </ItemTemplate>
       </Templates>
       <ListSection dataCollection="tasks" dataTransform="transfomer">
-        <ListItem image:image="{image}" lastModifiedDate:text="{prettyTime}" myDataId:text="{id}" text:text="{text}" status:text="{status}"/>
+        <ListItem image:image="{image}" lastModifiedDate:text="{prettyTime}" myDataId:text="{id}" searchableText="{text}" status:text="{status}" text:text="{text}"/>
       </ListSection>
     </ListView>
   </Window>
