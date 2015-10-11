@@ -1,13 +1,25 @@
-".container": {
-  backgroundColor: "white"
+'Window': {
+  title: 'TiTODO List'
 }
-"Label": {
-  width: Ti.UI.SIZE,
-  height: Ti.UI.SIZE,
-  color: "#000"
+'ListView': {}
+'ListItem': {
+  height: 80
 }
-"#label": {
-  font: {
-    fontSize: 12
-  }
+'.container': {
+  layout: 'horizontal'
 }
+'.lineView': {
+  layout: 'vertical',
+  left: 5
+}
+'.imageViw': {
+  width: 50,
+  height: 50
+}
+'Label': {
+  left: 0
+}
+'.myDataIdLbl': {}
+'.titleLbl': {}
+'.statusLbl': {}
+'.lastModifiedDateLbl': {}

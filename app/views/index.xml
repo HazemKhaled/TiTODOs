@@ -1,5 +1,21 @@
 <Alloy>
-  <Window class="container">
-    <Label id="label" onClick="doClick">Hello, World</Label>
+  <Window>
+    <ListView defaultItemTemplate="template" id="list" onItemclick="productListClicked">
+      <Templates>
+        <ItemTemplate name="template">
+          <View class="container">
+            <ImageView bindId="image" class="imageViw"/>
+            <View class="lineView">
+              <Label bindId="myDataId" class="myDataIdLbl"/>
+              <Label bindId="text" class="textLbl"/>
+              <Label bindId="lastModifiedDate" class="lastModifiedDateLbl"/>
+            </View>
+          </View>
+        </ItemTemplate>
+      </Templates>
+      <ListSection>
+        <ListItem image:image="/images/test.png" lastModifiedDate:text="Last day" myDataId:text="#23" text:text="Hey ya man"/>
+      </ListSection>
+    </ListView>
   </Window>
 </Alloy>

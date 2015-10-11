@@ -1,5 +1,5 @@
-function doClick(e) {
-  alert($.label.text);
+function productListClicked(e) {
+
 }
 
-$.index.open();
+Alloy.Globals.pageStack.open($.index);
