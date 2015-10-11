@@ -1,3 +1,4 @@
+Alloy.Globals.moment = require('alloy/moment');
 Alloy.Globals.pageStack = {
   navigationWindow: null,
   pages: [],
