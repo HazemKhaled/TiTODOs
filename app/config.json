@@ -8,5 +8,7 @@
   "os:ios": {},
   "os:mobileweb": {},
   "os:windows": {},
-  "dependencies": {}
+  "dependencies": {
+    "br.com.coredigital.SlideTabButtonBar": "1.0"
+  }
 }
