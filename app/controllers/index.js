@@ -20,21 +20,21 @@ function todoListClicked(e) {
         myModel.set('status', myModel.get('status') === 'completed' ? 'pending' : 'completed');
         myModel.set('lastModifiedDate', Alloy.Globals.moment().toISOString());
         myModel.save();
-        loadtasks();
+        loadTasks();
         break;
     }
   });
   options.show();
 }
 
-function loadtasks(_status) {
+function loadTasks(_status) {
   status = _status || tasksStatusToSelect;
   Alloy.Collections.tasks.fetch({
     query: "SELECT * FROM tasks WHERE status='" + status + "' ORDER BY lastModifiedDate DESC"
   });
 }
 // Load the data into the collection, collection will bind the data into the ListView automaticly
-loadtasks();
+loadTasks();
 
 function transfomer(model) {
   var transform = model.toJSON();
@@ -46,7 +46,7 @@ function transfomer(model) {
 // Reload the data after clicked on tabbed bar button
 $.segmentBar.addEventListener('click', function(e) {
   tasksStatusToSelect = e.index === 1 ? 'completed' : 'pending';
-  loadtasks();
+  loadTasks();
 });
 
 // Open add new screen
