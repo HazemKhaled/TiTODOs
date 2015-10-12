@@ -5,7 +5,7 @@
     </RightNavButton>
     <ScrollView>
       <TextField hintText="Text" id="text"/>
-      <TextField hintText="Image ... sooon" id="image"/>
+      <ImageView height="70" id="image" image="/noThingYaMan.png" width="70" onClick="showImageOptionDialog" top="5"/>
     </ScrollView>
   </Window>
 </Alloy>
