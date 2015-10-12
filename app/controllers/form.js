@@ -14,5 +14,7 @@ function saveBtnClicked() {
   });
   myModel.save();
 
+  args.refreshCollection();
+
   Alloy.Globals.pageStack.back();
 }

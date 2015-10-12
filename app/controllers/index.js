@@ -51,7 +51,9 @@ $.segmentBar.addEventListener('click', function(e) {
 
 // Open add new screen
 function addBtnClicked() {
-  Alloy.Globals.pageStack.open(Alloy.createController('form').getView());
+  Alloy.Globals.pageStack.open(Alloy.createController('form', {
+    refreshCollection: loadTasks
+  }).getView());
 }
 
 Alloy.Globals.pageStack.open($.index);
