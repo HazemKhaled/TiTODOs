@@ -2,7 +2,7 @@
   title: 'TiTODO List'
 }
 'ListView': {
-  top: 25
+  top: 40
 }
 'ListItem': {
   height: 100
@@ -26,3 +26,12 @@
 '.titleLbl': {}
 '.statusLbl': {}
 '.lastModifiedDateLbl': {}
+'#segmentBar': {
+  top: 0,
+  selectItemColor: "green",
+  height: 40
+}
+'.centerLabel': {
+  width: Titanium.UI.FILL,
+  textAlign: Titanium.UI.TEXT_ALIGNMENT_CENTER
+}

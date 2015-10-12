@@ -56,13 +56,11 @@ function transfomer(model) {
   return transform;
 }
 
-if (OS_IOS) {
-  // Reload the data after clicked on tabbed bar button
-  $.segmentBar.addEventListener('click', function(e) {
-    tasksStatusToSelect = e.index === 1 ? 'completed' : 'pending';
-    loadTasks();
-  });
-}
+// Reload the data after clicked on tabbed bar button
+$.segmentBar.on('CHANGE_INDEX', function(e) {
+  tasksStatusToSelect = e.source.index === 1 ? 'completed' : 'pending';
+  loadTasks();
+});
 
 // Open add new screen
 function addBtnClicked() {
