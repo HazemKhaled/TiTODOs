@@ -8,7 +8,7 @@
     </Menu>
     <ScrollView>
       <TextField hintText="Text" id="text"/>
-      <ImageView height="70" id="image" image="/noThingYaMan.png" width="70" onClick="showImageOptionDialog" top="5"/>
+      <ImageView id="image" onClick="showImageOptionDialog"/>
     </ScrollView>
   </Window>
 </Alloy>

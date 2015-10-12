@@ -10,3 +10,10 @@
 'TextField[platform=android]': {
   color: '#000000'
 }
+'#image': {
+  height: 70,
+  image: "/noThingYaMan.png",
+  backgroundColor: "gray",
+  width: 70,
+  top: 5
+}
