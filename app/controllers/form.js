@@ -16,6 +16,21 @@ function windowOpened() {
 }
 
 function saveBtnClicked() {
+
+  if ($.text.value.length === 0) {
+    var alertDialog = Ti.UI.createAlertDialog({
+      title: 'Error',
+      message: 'Enter task title at least',
+      buttons: ['OK']
+    });
+    alertDialog.addEventListener('click', function() {
+      $.text.focus();
+    });
+    alertDialog.show();
+
+    return false;
+  }
+
   myModel.set("text", $.text.value);
   myModel.set("lastModifiedDate", Alloy.Globals.moment().toISOString());
 
