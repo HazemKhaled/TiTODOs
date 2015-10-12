@@ -7,20 +7,26 @@ function todoListClicked(e) {
   // clicked row
   Ti.API.debug(JSON.stringify(item));
 
-  var myModel = Alloy.Collections.tasks.at(e.itemIndex);
   var options = Ti.UI.createOptionDialog({
     cancel: 2,
     title: item.text.text,
-    options: [myModel.get('status') === 'completed' ? 'Mark un-completed' : 'Mark completed', 'Cancel'],
+    options: [item.properties.status === 'completed' ? 'Mark un-completed' : 'Mark completed', 'Edit', 'Cancel'],
   });
 
   options.addEventListener('click', function(eOptions) {
     switch (eOptions.index) {
       case 0:
+        var myModel = Alloy.Collections.tasks.at(e.itemIndex);
         myModel.set('status', myModel.get('status') === 'completed' ? 'pending' : 'completed');
         myModel.set('lastModifiedDate', Alloy.Globals.moment().toISOString());
         myModel.save();
         loadTasks();
+        break;
+      case 1:
+        Alloy.Globals.pageStack.open(Alloy.createController('form', {
+          refreshCollection: loadTasks,
+          itemIndex: e.itemIndex
+        }).getView());
         break;
     }
   });
