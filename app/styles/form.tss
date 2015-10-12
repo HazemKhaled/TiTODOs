@@ -13,7 +13,9 @@
 '#image': {
   height: 70,
   image: "/noThingYaMan.png",
-  backgroundColor: "gray",
   width: 70,
   top: 5
+}
+'#image': {
+  backgroundColor: "gray"
 }
