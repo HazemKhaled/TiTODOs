@@ -4,6 +4,9 @@
     <RightNavButton platform="ios">
       <Button onClick="addBtnClicked">Add</Button>
     </RightNavButton>
+    <Menu platform="android">
+      <MenuItem onClick="addBtnClicked" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" title="Add"/>
+    </Menu>
     <TabbedBar backgroundColor="#369" height="25" id="segmentBar" index="0" platform="ios" top="0" width="200">
       <Labels>
         <Label>Pending</Label>

@@ -3,6 +3,9 @@
     <RightNavButton platform="ios">
       <Button onClick="saveBtnClicked">Save</Button>
     </RightNavButton>
+    <Menu platform="android">
+      <MenuItem onClick="saveBtnClicked" showAsAction="Ti.Android.SHOW_AS_ACTION_ALWAYS" title="Save"/>
+    </Menu>
     <ScrollView>
       <TextField hintText="Text" id="text"/>
       <ImageView height="70" id="image" image="/noThingYaMan.png" width="70" onClick="showImageOptionDialog" top="5"/>
