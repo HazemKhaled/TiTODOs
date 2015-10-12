@@ -7,17 +7,17 @@ function todoListClicked(e) {
   // clicked row
   Ti.API.debug(JSON.stringify(item));
 
+  var myModel = Alloy.Collections.tasks.at(e.itemIndex);
   var options = Ti.UI.createOptionDialog({
     cancel: 2,
     title: item.text.text,
-    options: ['Completed', 'Cancel'],
+    options: [myModel.get('status') === 'completed' ? 'Mark un-completed' : 'Mark completed', 'Cancel'],
   });
 
   options.addEventListener('click', function(eOptions) {
     switch (eOptions.index) {
       case 0:
-        var myModel = Alloy.Collections.tasks.at(e.itemIndex);
-        myModel.set('status', 'completed');
+        myModel.set('status', myModel.get('status') === 'completed' ? 'pending' : 'completed');
         myModel.set('lastModifiedDate', Alloy.Globals.moment().toISOString());
         myModel.save();
         loadtasks();
