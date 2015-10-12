@@ -8,9 +8,9 @@ function todoListClicked(e) {
   Ti.API.debug(JSON.stringify(item));
 
   var options = Ti.UI.createOptionDialog({
-    cancel: 2,
+    cancel: 3,
     title: item.text.text,
-    options: [item.properties.status === 'completed' ? 'Mark un-completed' : 'Mark completed', 'Edit', 'Cancel'],
+    options: [item.properties.status === 'completed' ? 'Mark un-completed' : 'Mark completed', 'Edit', 'Share', 'Cancel'],
   });
 
   options.addEventListener('click', function(eOptions) {
@@ -27,6 +27,13 @@ function todoListClicked(e) {
           refreshCollection: loadTasks,
           itemIndex: e.itemIndex
         }).getView());
+        break;
+      case 2:
+        require('com.alcoapps.socialshare').share({
+          status: item.text.text,
+          image: item.image.image,
+          androidDialogTitle: 'Do you really want to share your task?'
+        });
         break;
     }
   });
