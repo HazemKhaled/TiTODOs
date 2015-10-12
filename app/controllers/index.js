@@ -1,3 +1,5 @@
+var tasksStatusToSelect = 'pending';
+
 function todoListClicked(e) {
   // get the clicked item from that section
   var item = e.section.getItemAt(e.itemIndex);
@@ -26,7 +28,7 @@ function todoListClicked(e) {
 }
 
 function loadtasks(_status) {
-  status = _status || 'completed';
+  status = _status || tasksStatusToSelect;
   Alloy.Collections.tasks.fetch({
     query: "SELECT * FROM tasks WHERE status='" + status + "' ORDER BY lastModifiedDate DESC"
   });
@@ -43,7 +45,8 @@ function transfomer(model) {
 
 // Reload the data after clicked on tabbed bar button
 $.segmentBar.addEventListener('click', function(e) {
-  loadtasks(e.index === 0 ? 'completed' : 'pending');
+  tasksStatusToSelect = e.index === 1 ? 'completed' : 'pending';
+  loadtasks();
 });
 
 // Open add new screen
