@@ -18,7 +18,7 @@ function todoListClicked(e) {
       case 0:
         var myModel = Alloy.Collections.tasks.at(e.itemIndex);
         myModel.set('status', myModel.get('status') === 'completed' ? 'pending' : 'completed');
-        myModel.set('lastModifiedDate', Alloy.Globals.moment().toISOString());
+        myModel.set('lastModifiedDate', require('alloy/moment')().toISOString());
         myModel.save();
         loadTasks();
         break;
@@ -52,7 +52,7 @@ loadTasks();
 function transfomer(model) {
   var transform = model.toJSON();
 
-  transform.prettyTime = Alloy.Globals.moment(transform.lastModifiedDate).fromNow();
+  transform.prettyTime = require('alloy/moment')(transform.lastModifiedDate).fromNow();
   return transform;
 }
 

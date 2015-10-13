@@ -82,7 +82,7 @@ function saveBtnClicked() {
   }
 
   myModel.set("text", $.text.value);
-  myModel.set("lastModifiedDate", Alloy.Globals.moment().toISOString());
+  myModel.set("lastModifiedDate", require('alloy/moment')().toISOString());
 
   // insert if add, update if edit
   myModel.save();

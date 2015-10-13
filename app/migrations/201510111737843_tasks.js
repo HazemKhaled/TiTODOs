@@ -1,19 +1,20 @@
-var preload_data = [{
-  "text": "My Task man",
-  "lastModifiedDate": Alloy.Globals.moment().subtract(1, 'Q').toISOString(),
-  "status": "pending",
-  "image": "/images/1.png"
-}, {
-  "text": "Build the app",
-  "lastModifiedDate": Alloy.Globals.moment().subtract(1, 'M').toISOString(),
-  "status": "pending",
-  "image": "/images/1.png"
-}, {
-  "text": "Say thanks for all of you",
-  "lastModifiedDate": Alloy.Globals.moment().subtract(33, 'm').toISOString(),
-  "status": "completed",
-  "image": "/images/1.png"
-}];
+var moment = require('alloy/moment'),
+  preload_data = [{
+    "text": "My Task man",
+    "lastModifiedDate": moment().subtract(1, 'Q').toISOString(),
+    "status": "pending",
+    "image": "/images/1.png"
+  }, {
+    "text": "Build the app",
+    "lastModifiedDate": moment().subtract(1, 'M').toISOString(),
+    "status": "pending",
+    "image": "/images/1.png"
+  }, {
+    "text": "Say thanks for all of you",
+    "lastModifiedDate": moment().subtract(33, 'm').toISOString(),
+    "status": "completed",
+    "image": "/images/1.png"
+  }];
 
 migration.up = function(migrator) {
   migrator.createTable({
