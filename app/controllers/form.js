@@ -34,7 +34,7 @@ function showImageOptionDialog() {
           success: function(event) {
             alert(event.media.nativePath);
             $.image.image = event.media;
-            myModel.set('image', event.media.nativePath);
+            myModel.set('image', event.media);
           },
           error: function(errorEvent) {
             alert("Hey, It's not working on simulator");
